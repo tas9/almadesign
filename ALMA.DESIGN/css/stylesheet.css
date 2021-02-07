@@ -1,0 +1,850 @@
+@media (min-width: 0px) and (max-width: 686px) {
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue" , "sans-serif";
+    /* display: flex; */
+  }
+  
+  /* 背景画像を画面いっぱいに */
+  header {
+    margin: 0;
+    background-color: #cccccc;
+    background-image: url(../img/shadow.png);
+    height: 667px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+  }
+    
+  /* ALMA.DESIGNのロゴとナビゲーションを横並びに */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    background: #2f2f2f;
+    width: 100%;
+    height: 56px;
+    z-index: 1;
+  }
+
+  header nav > a {
+    display: flex;
+    text-align: center;
+    margin-left: 40px;
+  }
+
+  /* ALMA.DESIGNのロゴの大きさ指定 */
+  header img {
+    width: 168px;
+    align-self: center;
+  }
+
+  /* ナビゲーションの設定 */
+  header nav > ul {
+    display: none;
+  }
+  
+  #menu-btn-check {
+    display: none;
+  }
+
+  .menu-btn {
+    position: fixed;
+    top: 10px;
+    right: 32px;
+    display: flex;
+    height: 40px;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+  }
+
+  .menu-btn span,
+  .menu-btn span:before,
+  .menu-btn span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    position: absolute;
+  }
+  .menu-btn span:before {
+    bottom: 8px;
+  }
+  .menu-btn span:after {
+    top: 8px;
+  }
+
+  #menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+  }
+  #menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+  }
+  #menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  .menu-content ul {
+    padding: 70px 32px 0;
+  }
+  .menu-content ul li {
+    /* border-bottom: solid 1px #ffffff; */
+    list-style: none;
+  }
+  .menu-content ul li a {
+    display: block;
+    font-size: 16px;
+    box-sizing: border-box;
+    color:#ffffff;
+    text-decoration: none;
+    padding: 9px 0 16px 0;
+    position: relative;
+  }
+  .menu-content ul li a::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: solid 2px #ffffff;
+    border-right: solid 2px #ffffff;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 10px;
+    top: 16px;
+  }
+
+  .menu-content {
+    width: 160px;
+    height: 47%;
+    position: fixed;
+    top: 0;
+    z-index: 80;
+    background-color: #2f2f2f;
+    transition: all 0.5s;/*アニメーション設定*/
+    right: -160px;
+  }
+
+  #menu-btn-check:checked ~ .menu-content {
+    right: 0; /*メニューを画面内へ*/
+    display: inline-block;
+  }
+
+  /* キャッチコピーの DESIGN FOR ALL の設定 */
+  .catch-copy {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-family: "Helvetica Neue" , "sans-serif";
+    line-height: 0.9;
+  }
+  
+  .catch-copy h1 {
+    margin: 0;
+    padding-bottom: 24px;
+  }
+
+  /* 下へのスクロール導線（下矢印） */
+  .triangle {
+    content: "";
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .triangle ::before{
+    width: 0px;
+    height: 0px;
+    content: "";
+    border:1px solid transparent;
+    border-top:14px solid #ffffff;
+    border-right-width:8px;
+    border-left-width:8px;
+    position: absolute;
+    opacity: 0.3;
+  }
+  
+  .triangle ::after {
+    width: 0px;
+    height: 0px;
+    content: "";
+    border:1px solid transparent;
+    border-top:14px solid #ffffff;
+    border-right-width:8px;
+    border-left-width:8px;
+    position: absolute;
+    transform: scale(1, 0);
+    transform-origin: left top;
+    transition: all 0.3s;
+  }
+  
+  .triangle :hover::after {
+    transform: scale(1, 1);
+  }
+  
+  /* メインコンテンツ */
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fafafa;
+    padding: 80px 18px 344px 18px;
+  }
+  
+  /* 記事たちのまとまり */
+  .card-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  
+  .card-box {
+    width:300px;
+    height: 336px;
+    display: block;
+    margin: 8px;
+  }
+  
+  .card-box .card {
+    height: 316px;
+    background-color:#fff;
+    box-shadow:0 2px 5px rgba(0, 0, 0, 0.2);
+    padding:10px;
+    transition:box-shadow 0.3s, transform 0.3s;
+    position: relative;
+  }
+  
+  .card-box .card .card-image {
+    margin: 0 0 12px;
+    text-align: center;
+  }
+  
+  .card-box .card .card-image img {
+    width: auto; 
+    height: 180px;
+    vertical-align:top;
+  }
+  
+  .card-box .card .card-tag {
+    color: #8d8d8d;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0;
+    margin-bottom: 4px;
+    height: 20px;
+  }
+  
+  .card-box .card .card-title {
+    color: #2f2f2f;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+    margin-bottom: 8px;
+    height: 68px;
+  }
+  
+  .card-box .card .writer-image {
+    margin: 0;
+  }
+
+  .card-box .card .writer-image img {
+    width: 24px;
+    height: 24px;
+    border-radius: 16px;
+    float: left;
+    vertical-align: top;
+  }
+  
+  .card-box .card .writer-name {
+    color: #8d8d8d;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 24px;
+    margin: 0;
+    margin-left: 32px;
+  }
+  
+  .card-box .card:hover {
+    box-shadow:0 6px 14px rgba(0, 0, 0, 0.14);
+    transform:translate(0, -2px);
+  }
+
+  /* リンク範囲拡大用コード */
+  .stretched-link {
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    z-index:1;
+    pointer-events:auto;
+    content:"";
+    background:rgba(0,0,0,0);
+    overflow: hidden;
+  }
+  
+  /* 記事をもっと見る */
+  .content-more-animation {
+    width: 168px;
+    height: 32px;
+  }
+  
+  .content-more {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #2f2f2f;
+    background: transparent;
+    position: relative;
+    transition: all 0.5s;
+  }
+  
+  .content-more p {
+    color: #2f2f2f;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 32px;
+    margin: 0;
+  }
+  
+  .content-more-animation :hover {
+    opacity: 0.5;
+  }
+  
+  /* フッター上部に置く採用情報へのリンク */
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 80px; 
+    background: #fafafa;
+  }
+  
+  .footer-top-text {
+    color: #2f2f2f;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .footer-btn {
+    width: 280px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: #2f2f2f;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+    overflow: hidden;
+    color:#ffffff;
+  }
+    
+  .footer-btn .btn-icon {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+  }
+
+  .footer-btn img {
+    width: 16px;
+    margin-left: 64px;
+    margin-right: 16px;
+  }
+  
+  .footer-btn-box :hover {
+    animation: 1s infinite  btn-animation;
+  }
+  
+  @keyframes btn-animation {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(8px, 0);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  
+  /* フッター */
+  footer {
+    height: 667px;
+    background-color: #2f2f2f;
+    padding: 0 40px 32px 40px;
+  }
+
+  .footer-left {
+    padding-top: 104px;
+  }
+
+  .footer-left img {
+    display: none;
+  }
+  
+  .footer-left ul {
+    font-size: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+  }
+  
+  .footer-left li {
+    width: 104px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 16px;
+    list-style: none;
+    display: inline-block;
+    padding-bottom: 16px;
+  }
+  
+  .footer-left ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    transition: all 0.5s;
+  }
+  
+  .footer-right {
+    margin-top: 400px; /*追加するコンテンツに応じて減らす*/ 
+  }
+
+  .footer-right img {
+    width: 56px;
+    transition: all 0.5s;
+  }
+  
+  .footer-right .facebook-link {
+    margin-left: 16px;
+  }
+  
+  .footer-left ul li :hover{
+    opacity: 0.6;
+  }
+  
+  .footer-right a :hover {
+    opacity: 0.7;
+  }
+
+}
+  
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+   ーーーーーーーーーーーーブレイクポイントーーーーーーーーーーーーー
+   ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+
+@media (min-width: 687px){
+  
+  body {
+    margin: 0;
+    font-family: "Helvetica Neue" , "sans-serif";
+    /* display: flex; */
+  }
+  
+  /* 背景画像を画面いっぱいに */
+  header {
+    margin: 0;
+    background-color: #cccccc;
+    background-image: url(../img/shadow.png);
+    height: 720px;
+    color: #ffffff;
+  }
+  
+  /* ALMA.DESIGNのロゴの大きさ指定 */
+  header img {
+    width: 168px;
+  }
+  
+  /* ナビゲーションの設定 */
+  header ul {
+    font-size: 0;
+  }
+  
+  header li {
+    width: 100px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    font-size: 16px;
+    list-style: none;
+    display: inline-block;
+  }
+  
+  header li a {
+    position: relative;
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+  }
+  
+  header li :after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: #ffffff;
+    transform: scale(0, 1);
+    transform-origin: left top;
+    transition: transform 0.3s;
+  }
+  
+  header li :hover::after {
+    transform: scale(1, 1);
+  }
+  
+  /* ALMA.DESIGNのロゴとナビゲーションを横並びに */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 32px 0;
+  }
+  
+  #menu-btn-check {
+    display: none;
+  }
+
+  .menu-content {
+    display: none;
+  }
+
+  /* キャッチコピーの DESIGN FOR ALL の設定 */
+  .catch-copy {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    font-family: "Helvetica Neue" , "sans-serif";
+    line-height: 0.9;
+    height: 664px;
+  }
+  
+  .catch-copy h1 {
+    margin: 0;
+    padding-bottom: 24px;
+  }
+  
+  /* 下へのスクロール導線（下矢印） */
+  .triangle {
+    content: "";
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .triangle ::before{
+    width: 0px;
+    height: 0px;
+    content: "";
+    border:1px solid transparent;
+    border-top:14px solid #ffffff;
+    border-right-width:8px;
+    border-left-width:8px;
+    position: absolute;
+    opacity: 0.3;
+  }
+  
+  .triangle ::after {
+    width: 0px;
+    height: 0px;
+    content: "";
+    border:1px solid transparent;
+    border-top:14px solid #ffffff;
+    border-right-width:8px;
+    border-left-width:8px;
+    position: absolute;
+    transform: scale(1, 0);
+    transform-origin: left top;
+    transition: all 0.3s;
+  }
+  
+  .triangle :hover::after {
+    transform: scale(1, 1);
+  }
+  
+  /* メインコンテンツ */
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fafafa;
+    padding: 80px 18px 344px 18px;
+  }
+  
+  /* 記事たちのまとまり */
+  .card-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  
+  .card-box {
+    width:300px;
+    height: 336px;
+    display: block;
+    margin: 8px;
+  }
+  
+  .card-box .card {
+    height: 316px;
+    background-color:#fff;
+    box-shadow:0 2px 5px rgba(0, 0, 0, 0.2);
+    padding:10px;
+    transition:box-shadow 0.3s, transform 0.3s;
+    position: relative;
+  }
+  
+  .card-box .card .card-image {
+    margin: 0 0 12px;
+    text-align: center;
+  }
+  
+  .card-box .card .card-image img {
+    width: auto; 
+    height: 180px;
+    vertical-align:top;
+  }
+  
+  .card-box .card .card-tag {
+    color: #8d8d8d;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0;
+    margin-bottom: 4px;
+    height: 20px;
+  }
+  
+  .card-box .card .card-title {
+    color: #2f2f2f;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+    margin-bottom: 8px;
+    height: 68px;
+  }
+  
+  .card-box .card .writer-image {
+    margin: 0;
+  }
+  
+  .card-box .card .writer-image img {
+    width: 24px;
+    height: 24px;
+    border-radius: 16px;
+    float: left;
+    vertical-align: top;
+  }
+  
+  .card-box .card .writer-name {
+    color: #8d8d8d;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 24px;
+    margin: 0;
+    margin-left: 32px;
+  }
+  
+  .card-box .card:hover {
+    box-shadow:0 6px 14px rgba(0, 0, 0, 0.14);
+    transform:translate(0, -2px);
+  }
+  
+  /* リンク範囲拡大用コード */
+  .stretched-link {
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    z-index:1;
+    pointer-events:auto;
+    content:"";
+    background:rgba(0,0,0,0);
+    overflow: hidden;
+  }
+  
+  /* 記事をもっと見る */
+  .content-more-animation {
+    width: 168px;
+    height: 32px;
+  }
+  
+  .content-more {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #2f2f2f;
+    background: transparent;
+    position: relative;
+    transition: all 0.5s;
+  }
+  
+  .content-more p {
+    color: #2f2f2f;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 32px;
+    margin: 0;
+  }
+  
+  .content-more-animation :hover {
+    opacity: 0.5;
+  }
+  
+  /* フッター上部に置く採用情報へのリンク */
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 80px; 
+    background: #fafafa;
+  }
+  
+  .footer-top-text {
+    color: #2f2f2f;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .footer-btn {
+    width: 280px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: #2f2f2f;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+    overflow: hidden;
+    color:#ffffff;
+  }
+  
+  .footer-btn .btn-icon {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+  }
+  
+  .footer-btn img {
+    width: 16px;
+    margin-left: 64px;
+    margin-right: 16px;
+  }
+  
+  .footer-btn-box :hover {
+    animation: 1s infinite  btn-animation;
+  }
+  
+  @keyframes btn-animation {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(8px, 0);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  
+  /* フッター */
+  footer {
+    width: 100%;
+    background-color: #2f2f2f;
+  }
+  
+  .footer-box {
+    background-color: #2f2f2f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 26px 32px 0;
+  }
+
+  .footer-left img {
+    width: 184px;
+    margin: 0 0 4px 26px;
+  }
+  
+  .footer-left ul {
+    font-size: 0;
+    padding: 0;
+    margin-left: 8px;
+  }
+  
+  .footer-left li {
+    width: 104px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    font-size: 16px;
+    list-style: none;
+    display: inline-block;
+    border-right: 1px solid #ffffff; 
+  }
+  
+  .footer-left ul :last-child {
+    border-right: 0px solid #ffffff; 
+  }
+  
+  .footer-left ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    transition: all 0.5s;
+  }
+  
+  .footer-right img {
+    width: 56px;
+    transition: all 0.5s;
+  }
+  
+  .footer-right .facebook-link {
+    margin-left: 16px;
+  }
+  
+  .footer-left ul li :hover{
+    opacity: 0.6;
+  }
+  
+  .footer-right a :hover {
+    opacity: 0.7;
+  }
+}
+
+@media (min-width: 1024px){
+  nav {
+    width: 1024px;
+    margin: 0 auto;
+  }
+  .card-boxes {
+    width: 1024px;
+  }
+  footer {
+    width: 100%;
+    background-color: #2f2f2f;
+    display: flex;
+    justify-content: center;
+  }
+  .footer-box {
+    width: 1024px;
+    background-color: #2f2f2f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 26px 32px 0;
+  }
+}
