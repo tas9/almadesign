@@ -64,60 +64,146 @@ main {
   overflow: hidden;
 }
 
-/* フッター */
-footer {
-  background-color: #2f2f2f;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 32px 26px 32px 0;
+  /* フッター */
+  footer {
+    height: 667px;
+    background-color: #2f2f2f;
+    padding: 0 40px 32px 40px;
+  }
+
+  .footer-left {
+    padding-top: 104px;
+  }
+
+  .footer-left img {
+    display: none;
+  }
+  
+  .footer-left ul {
+    font-size: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+  }
+  
+  .footer-left li {
+    width: 104px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 16px;
+    list-style: none;
+    display: inline-block;
+    padding-bottom: 16px;
+  }
+  
+  .footer-left ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    transition: all 0.5s;
+  }
+  
+  .footer-right {
+    margin-top: 400px; /*追加するコンテンツに応じて減らす*/ 
+  }
+
+  .footer-right img {
+    width: 56px;
+    transition: all 0.5s;
+  }
+  
+  .footer-right .facebook-link {
+    margin-left: 16px;
+  }
+  
+  .footer-left ul li :hover{
+    opacity: 0.6;
+  }
+  
+  .footer-right a :hover {
+    opacity: 0.7;
+  }
+
+@media (min-width: 687px){
+  /* フッター */
+  footer {
+    width: 100%;
+    background-color: #2f2f2f;
+  }
+
+  .footer-box {
+    background-color: #2f2f2f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 26px 32px 0;
+  }
+
+  .footer-left img {
+    width: 184px;
+    margin: 0 0 4px 26px;
+  }
+
+  .footer-left ul {
+    font-size: 0;
+    padding: 0;
+    margin-left: 8px;
+  }
+
+  .footer-left li {
+    width: 104px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    font-size: 16px;
+    list-style: none;
+    display: inline-block;
+    border-right: 1px solid #ffffff; 
+  }
+
+  .footer-left ul :last-child {
+    border-right: 0px solid #ffffff; 
+  }
+
+  .footer-left ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    transition: all 0.5s;
+  }
+
+  .footer-right img {
+    width: 56px;
+    transition: all 0.5s;
+  }
+
+  .footer-right .facebook-link {
+    margin-left: 16px;
+  }
+
+  .footer-left ul li :hover{
+    opacity: 0.6;
+  }
+
+  .footer-right a :hover {
+    opacity: 0.7;
+  }
 }
 
-.footer-left img {
-  width: 184px;
-  margin: 0 0 4px 26px;
+@media (min-width: 1024px){
+  footer {
+    width: 100%;
+    background-color: #2f2f2f;
+    display: flex;
+    justify-content: center;
+  }
+  .footer-box {
+    width: 1024px;
+    background-color: #2f2f2f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 26px 32px 0;
+  }
 }
-
-.footer-left ul {
-  font-size: 0;
-  padding: 0;
-  margin-left: 8px;
-}
-
-.footer-left li {
-  width: 104px;
-  height: 24px;
-  text-align: center;
-  line-height: 24px;
-  font-size: 16px;
-  list-style: none;
-  display: inline-block;
-  border-right: 1px solid #ffffff; 
-}
-
-.footer-left ul :last-child {
-  border-right: 0px solid #ffffff; 
-}
-
-.footer-left ul li a {
-  text-decoration: none;
-  color: #ffffff;
-  display: block;
-  transition: all 0.5s;
-}
-
-.footer-right img {
-  width: 56px;
-  transition: all 0.5s;
-}
-
-.footer-right .facebook-link {
-  margin-left: 16px;
-}
-
-.footer-left ul li :hover{
-  opacity: 0.6;
-}
-
-.footer-right a :hover {
-  opacity: 0.7;
