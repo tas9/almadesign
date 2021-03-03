@@ -64,6 +64,7 @@ main {
   overflow: hidden;
 }
 
+@media (min-width: 0px) and (max-width: 686px) {
   /* フッター */
   footer {
     height: 667px;
@@ -124,6 +125,7 @@ main {
   .footer-right a :hover {
     opacity: 0.7;
   }
+}
 
 @media (min-width: 687px){
   /* フッター */
@@ -131,7 +133,6 @@ main {
     width: 100%;
     background-color: #2f2f2f;
   }
-
   .footer-box {
     background-color: #2f2f2f;
     display: flex;
@@ -139,18 +140,15 @@ main {
     align-items: center;
     padding: 32px 26px 32px 0;
   }
-
   .footer-left img {
     width: 184px;
     margin: 0 0 4px 26px;
   }
-
   .footer-left ul {
     font-size: 0;
     padding: 0;
     margin-left: 8px;
   }
-
   .footer-left li {
     width: 104px;
     height: 24px;
@@ -161,31 +159,25 @@ main {
     display: inline-block;
     border-right: 1px solid #ffffff; 
   }
-
   .footer-left ul :last-child {
     border-right: 0px solid #ffffff; 
   }
-
   .footer-left ul li a {
     text-decoration: none;
     color: #ffffff;
     display: block;
     transition: all 0.5s;
   }
-
   .footer-right img {
     width: 56px;
     transition: all 0.5s;
   }
-
   .footer-right .facebook-link {
     margin-left: 16px;
   }
-
   .footer-left ul li :hover{
     opacity: 0.6;
   }
-
   .footer-right a :hover {
     opacity: 0.7;
   }
